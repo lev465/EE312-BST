@@ -9,3 +9,15 @@ Upon creation of the tree, if the value of an added item is greater than the cur
 
 To use the BST template, simply include it into the driver program as:
 	#include "BST312.h"
+
+Use of this template requires C++11. To run:
+
+	module load gcc
+	g++ -std=c++11 <DRIVERPROGRAM>
+
+where DRIVERPROGRAM is the name of the driver using the template.
+
+This template can be found on git at the following link:
+
+https://github.com/lev465/EE312-BST
+
