@@ -301,37 +301,32 @@ void BST_312 <ItemType>::insertItem(TreeNode*& t, const ItemType& newItem)
     if(root == NULL){
         TreeNode *temp = new TreeNode;
         temp->data = newItem;
-        cout << "Item inserted - " <<newItem << endl;
         temp->left = NULL;
         temp->right = NULL;
         root = temp;
     }
 
     else {
-        if (!isFull()) {
-            if (newItem < t->data) {
-                if (t->left == NULL) {
-                    TreeNode *temp = new TreeNode;
-                    temp->data = newItem;
-                    cout << "Item inserted - " << newItem << endl;
-                    temp->left = NULL;
-                    temp->right = NULL;
-                    t->left = temp;
-                } else{
-                    insertItem(t->left, newItem);
-                }
+        if (newItem < t->data) {
+            if (t->left == NULL) {
+                TreeNode *temp = new TreeNode;
+                temp->data = newItem;
+                temp->left = NULL;
+                temp->right = NULL;
+                t->left = temp;
+            } else{
+                insertItem(t->left, newItem);
             }
-            else {
-                if (t->right == NULL) {
-                    TreeNode *temp = new TreeNode;
-                    temp->data = newItem;
-                    cout << "Item inserted - " << newItem << endl;
-                    temp->left = NULL;
-                    temp->right = NULL;
-                    t->right = temp;
-                } else{
-                    insertItem(t->right, newItem);
-                }
+        }
+        else {
+            if (t->right == NULL) {
+                TreeNode *temp = new TreeNode;
+                temp->data = newItem;
+                temp->left = NULL;
+                temp->right = NULL;
+                t->right = temp;
+            } else{
+                insertItem(t->right, newItem);
             }
         }
     }
